@@ -353,14 +353,18 @@ function loadCsvFromUrl(url) {
       headers = parsed.headers;
       allRows = parsed.rows;
 
-      imageColIndex    = headers.indexOf("Image");
-      statusColIndex   = headers.indexOf("Status");
-      replacedColIndex = headers.indexOf("Replaced By");
-      notesColIndex    = headers.indexOf("Notes");
-      systemColIndex   = headers.indexOf("System");
-      brandColIndex    = headers.indexOf("Brand");
-      categoryColIndex = headers.indexOf("Category");
-      partCodeColIndex = headers.indexOf("Part Code");
+     function findCol(name) {
+  return headers.findIndex(h => h.trim().toLowerCase() === name.toLowerCase());
+}
+
+imageColIndex    = findCol("Image");
+statusColIndex   = findCol("Status");
+replacedColIndex = findCol("Replaced By");
+notesColIndex    = findCol("Notes");
+systemColIndex   = findCol("System");
+brandColIndex    = findCol("Brand");
+categoryColIndex = findCol("Category");
+partCodeColIndex = findCol("Part Code");
 
       renderHeader();
       initFilters();
