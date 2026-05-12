@@ -149,7 +149,7 @@ const partNameGr   = partNameGrIdx >= 0 ? row[partNameGrIdx] : "";
   img.loading = "lazy";
 
 img.src = value.trim() !== ""
-  ? "images/" + value.trim() + ".jpg"
+  ? "images/" + value.trim()
   : "images/no-image.png";
 
 img.onerror = function () {
