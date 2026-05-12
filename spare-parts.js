@@ -148,8 +148,8 @@ const partNameGr   = partNameGrIdx >= 0 ? row[partNameGrIdx] : "";
   img.classList.add("spare-thumb");
   img.loading = "lazy";
 
- img.src = value.trim() !== ""
-  ? "images/" + value.trim()
+img.src = value.trim() !== ""
+  ? "images/" + value.trim() + ".jpg"
   : "images/no-image.png";
 
 img.onerror = function () {
